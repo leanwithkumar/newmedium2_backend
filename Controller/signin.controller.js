@@ -1,6 +1,7 @@
 import users from "../Models/users.model.js";
 import { validtesignin } from "../utils/validatesignin.js";
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
 
 export const signin = async(req, res) => {
   try {
