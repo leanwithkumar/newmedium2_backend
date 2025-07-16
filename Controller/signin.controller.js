@@ -1,3 +1,4 @@
+import users from "../Models/users.model.js";
 import { validtesignin } from "../utils/validatesignin.js";
 
 export const signin = async(req, res) => {
