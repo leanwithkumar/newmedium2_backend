@@ -22,19 +22,15 @@ const app = express();
 const port = process.env.PORT
 
 const allowedOrigins = [
-  "http://localhost:5173",          // for local dev
-  "https://medium2-new.vercel.app"  // for production frontend
+  "http://localhost:5173",          // Local development
+  "https://medium2-new.vercel.app"  // Production
 ];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true
+  origin: allowedOrigins,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json())
 app.use(cookieParser())
