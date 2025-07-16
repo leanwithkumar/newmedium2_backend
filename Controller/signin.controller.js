@@ -1,5 +1,6 @@
 import users from "../Models/users.model.js";
 import { validtesignin } from "../utils/validatesignin.js";
+import bcrypt from "bcrypt"
 
 export const signin = async(req, res) => {
   try {
